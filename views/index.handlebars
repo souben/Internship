@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="/css/style.css">
+<div id="search" class="clearfix">
+	<form class="positions" action="/index" method="post">
+		<div class="bucket description">
+			<h3><span>Job Description</span></h3>
+			<div class="field">
+        <input type="text" name="description" id="description_field" placeholder="Filter by title, benefits, companies, expertise" autocomplete="off" />
+			</div>
+		</div>
+		<div class="bucket location">
+			<h3><span>Location</span></h3>
+			<div class="field">
+        <input type="text" name="location" id="location_field" placeholder="Filter by city, state, zip code or country" autocomplete="off" />
+			</div>
+		</div>
+		<div class="bucket fulltime">
+			<label class="simplefield">
+        <input type="checkbox" name="full_time" id="full_time_field" value="on" />
+				Full Time Only
+			</label>
+		</div>
+		<button type="submit">Search</button>
+	</form>
+</div>
+{{#if show_data}}
+		<div id="page" style="background-color:#f5f4f7 ;border: 1;box-shadow: inset 0 9px 9px -3px #dadada;-webkit-border-radius: 5px;-moz-border-radius: 5px;-ms-border-radius: 5px;-o-border-radius: 5px;border-radius: 5px;">
+  		<div class="inner">
+				<h1><b>Featured Jobs</b></h1>
+    		<div class="columns generic">
+      		<div class="column main">
+						<section>
+							<table class="positionlist">
+         	  		<tbody>
+            			{{#each show_data}}
+				        	<tr class="job">
+					        	<td class="title">
+							       <h4><a href="/index/{{this.id}}">{{this.title}}</a></h4>
+							       <p class="source">
+								     <a class="company" href="{{company_url}}">{{this.company}}</a>
+		                 <strong class="type">{{this.type}}</strong></p>
+						        </td>
+					        	<td class="meta">
+	                 		<span class="location">{{this.location}}</span>
+	                 		<span class="when relatize relatized">{{this.created_at}}</span>
+					        	</td>
+				         	</tr>
+             			{{/each}}
+				     		</tbody>
+		  	   		</table>
+        		</section>
+      			<h1><b>Hot Searches</b></h1>
+        		<div class="hot-searches">
+            	<a href="/index?description=PHP&location=">PHP</a>
+            	<a href="/index?description=Rails&location=">Rails</a>
+            	<a href="/index?description=Python&location=">Python</a>
+            	<a href="/index?description=JavaScript&location=">JavaScript</a>
+            	<a href="/index?description=Scala&location=">Scala</a>
+            	<a href="/index?description=Android&location=">Android</a>
+            	<a href="/index?description=iOS&location=">iOS</a>
+            	<a href="/index?description=Linux&location=">Linux</a>
+            	<a href="/index?description=Erlang&location=">Erlang</a>
+				    	<a href="/index?description=&location=San+Francisco">San Francisco</a>
+            	<a href="/index?description=&location=New+York+City">New York City</a>
+            	<a href="/index?description=&location=Austin%2C+TX">Austin, TX</a>
+            	<a href="/index?description=&location=London">London</a>
+            	<a href="/index?description=&location=Europe">Europe</a>
+        		</div>
+      		</div>
+	  		</div>
+  		</div>
+		</div>
+{{/if}}
+{{#if show_IDdata}}
+	<div id="page" style="background-color:#f5f4f7 ;border: 1;box-shadow: inset 0 9px 9px -3px #dadada;-webkit-border-radius: 5px;-moz-border-radius: 5px;-ms-border-radius: 5px;-o-border-radius: 5px;border-radius: 5px;">
+   <div class="inner">
+     <p class="supertitle"> {{show_IDdata.type}} / {{show_IDdata.location}}</p>
+	   <h1>{{show_IDdata.title}}</h1>
+		 <div class="columns generic">
+
+		 		<div class="column main">{{{show_IDdata.description}}}</div>
+		 		<div class="column sidebar">
+					<div class="module logo">
+						<div class="inner">
+							<h2><b>{{show_IDdata.company}}</b></h2>
+							<div class="logo">
+								<a target="_blank" href="{{show_IDdata.company_url}}">
+									<img src="{{show_IDdata.company_logo}}" />
+								</a>
+							</div>
+							<p class="url">
+								<a target="_blank" href="{{show_IDdata.scompany_url}}">{{show_IDdata.company_url}}</a>
+							</p>
+						</div>
+					</div>
+					<div class="module highlighted">
+						<div class="inner">
+							<h1><b>How to apply</b></h1>
+							{{{show_IDdata.how_to_apply}}}
+						</div>
+					</div>
+		 		</div>
+ 		 </div>
+	 </div>
+ </div>
+{{/if}}

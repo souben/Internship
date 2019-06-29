@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Internship Online</title>
+    <link rel="icon" type="image/png" href="internship.png" />
+    <link rel="stylesheet" href="/css/image.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/solar/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </head>
+  <body style="background-color: #e8e8e8;">
+    <div class="">
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="/homepage">Internship Online</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+          <ul class="navbar-nav mr-auto navbar-left">
+            {{#if user}}
+            <li class="nav-item">
+              <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">Offers <span class="sr-only">(current)</span></a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/homepage">Home <span class="sr-only">(current)</span></a>
+            </li>
+            {{/if}}
+          </ul>
+          <ul class="navbar-nav navbar-right">
+            {{#if user}}
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Logout <span class="sr-only">(current)</span></a>
+            </li>
+            {{else}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Register <span class="sr-only">(current)</span></a>
+            </li>
+            {{/if}}
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br>
+    <div class="container">
+      {{#if success_msg}}
+        <div class="alert alert-success">
+          {{success_msg}}
+        </div>
+      {{/if}}
+      {{#if error_msg}}
+        <div class="alert alert-danger">
+          {{error_msg}}
+        </div>
+      {{/if}}
+      {{#if error}}
+        <div class="alert alert-danger">
+          {{error}}
+        </div>
+      {{/if}}
+      {{#if errors}}
+        {{#each errors}}
+          <div class="alert alert-danger">
+            {{msg}}
+          </div>
+        {{/each}}
+      {{/if}}
+      {{{body}}}
+    </div>
+  </body>
+  <style media="screen">
+  .margin-fix {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+  </style>
+  <footer class="" style="background-color: #DEDEDE; margin-top: 125px;">
+    <section class="">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 margin-fix">
+            <h5 class="">Who Is Internship Online?</h5>
+            <ul class="footer__list">
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">Contact</a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">Blog</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 margin-fix">
+            <h5 class="">Recruiters</h5>
+            <ul class="footer__list">
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">Offers</a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">What We Do</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 margin-fix">
+            <h5 class="">Infos</h5>
+            <ul class="footer__list">
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">About us</a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__link" href="#">General Conditions Of The Website</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 margin-fix">
+            <h5 class="">Follow Us</h5>
+            <a href="#" style="font-size:28px; padding-right: 10px;"><i class="fa fa-facebook-f" aria-hidden="true"></i></a>
+            <a href="#" style="font-size:28px; padding-right: 10px;"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+            <a href="#" style="font-size:28px;"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Copyright &copy; 2019, Internship Online</h4>
+        </div>
+      </div>
+    </section>
+  </footer>
+</html>

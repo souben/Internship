@@ -1,0 +1,32 @@
+{
+  "name": "passportlogin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "*",
+    "cors": "^2.8.5",
+    "express": "*",
+    "express-handlebars": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongoose": "*",
+    "node-fetch": "^2.3.0",
+    "nodemailer": "*",
+    "nodemailer-smtp-transport": "*",
+    "nodemon": "^1.18.10",
+    "passport": "^0.4.0",
+    "passport-http": "*",
+    "passport-local": "*"
+  }
+}
