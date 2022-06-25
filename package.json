@@ -21,7 +21,7 @@
     "express-session": "*",
     "express-validator": "*",
     "mongoose": "*",
-    "node-fetch": "^2.3.0",
+    "node-fetch": "^2.6.7",
     "nodemailer": "*",
     "nodemailer-smtp-transport": "*",
     "nodemon": "^1.18.10",
